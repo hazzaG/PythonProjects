@@ -7,13 +7,11 @@ pathChoice = validation.validateInt()
 
 
 def potionLook():
-    print("\nWhat rarity of potion would you like to see?\n1. All\n2. Common\n")
+    print("\nWhat rarity of potion would you like to see?\n1. All\n2. Common\n3. Uncommon\n4. Rare\n5. Very rare\n")
     potionRarity = validation.validateInt()
     print("\nWhat type of potion would you like to see?\n1. All\n2. Potion\n3. Poison\n4. Oil\n5. Philter\n6. Elixir\n7. Miscellaneous\n")
     potionType = validation.validateInt()
     readData.readPotions(potionRarity, potionType)
-
-#def ingredientTypeChooser(ingredientRole,ingredientTypeChoice)
 
 def ingredientLook():
     print("\nWhat rarity of ingredients would you like to see?\n1. All\n2. Common\n3. Uncommon\n4. Rare\n5. Very rare\n")

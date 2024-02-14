@@ -26,6 +26,12 @@ def readPotions(potionRarity, potionType):
             potionRarity = "%"
         case 2:
             potionRarity = "Common"
+        case 3:
+            potionRarity = "Uncommon"
+        case 4:
+            potionRarity = "Rare"
+        case 5:
+            potionRarity = "Very rare"
 
     match potionType:
         case 1:
