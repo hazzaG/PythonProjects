@@ -131,3 +131,23 @@ def readIngredients(ingredientRarity, ingredientRole, ingredientTypeChoice):
         print(f"{e}")
 if __name__ == "__main__":
     readIngredients()
+
+
+def readIngredientsID(ingredientId):
+    try:
+        dbCursor.execute(f"SELECT Name,Rarity,IngType,Amount FROM ingredients WHERE ID = {ingredientId}")
+        # # dbCursor.execute("CREATE DATABASE TEST")
+
+        rows = dbCursor.fetchall()
+        # OR 
+        # rows = dbCursor.execute("SELECT * FROM potions").fetchall()
+
+        if not rows:
+            return "No record exists"
+        else:
+            for aRecord in rows:
+                print(aRecord)
+    except sql.errors.Error as e:
+        print(f"{e}")
+if __name__ == "__main__":
+    readIngredientsID()

@@ -29,3 +29,19 @@ def update_data():
 if __name__ == "__main__":
     update_data()
 
+def ingredientUpdate(ingredientId,updateAmount):
+    try:
+        dbCursor.execute(f"SELECT amount FROM ingredients WHERE ID = {ingredientId}")
+
+        currentAmount = dbCursor.fetchone()[0] # return the specific record selected above
+        print(currentAmount)
+        newAmount = currentAmount + updateAmount
+
+        dbCursor.execute(f"UPDATE ingredients SET amount = {newAmount} WHERE ID = {ingredientId}")
+        dbCon.commit()
+        print(f"New ingredient amount is {newAmount}")
+        
+    except sql.errors.Error as e:
+        print(f"failed : {e}")
+if __name__ == "__main__":
+    ingredientUpdate()
