@@ -1,0 +1,24 @@
+This is an attempt to turn the Thrustmaster 16000 joystick and thrust into an instrument.
+
+The various dials and buttons should allow for a lot of variability in what sounds can be produced.
+
+This work, if progressed will probably have a lot of iterations if it is to feel good to play.
+
+The first step should be to enable the program to read inputs from these devices. So pygame will be useful, pygame will also allow us to create an interface down the line.
+
+pygame joystick documentation: https://www.pygame.org/docs/ref/joystick.html
+
+Used simple pygame tutorial to get basic visual confirmation that the joystick and other controls are working.
+
+PROBLEMS:
+Hat integration may be extra complicated
+Mysterious high value on pinky scroll (occasionally just hits 3.1 when normal range is 1.0 to - 1.0)
+Figure out continuous input for axis when held at a consistent point (solved)
+Figure out how to implement dead zones
+Deal with sound clicking before and after a note plays
+
+Ok time to attempt to map these sounds to the joystick. I think having tone on the roll axis will work best, then volume on the thrust and we'll figure out the rest.
+
+First step will be to figure out how to update the tone in real time. (solved)
+
+Tried to implement a way to adjust sine wave phase shift in order to fix the clicking issue. Unfortunately the issue persists.
